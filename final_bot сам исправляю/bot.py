@@ -329,7 +329,7 @@ async def explain(
 
 
     await message.answer(
-        texts.DEPOSIT_TEXT,
+        texts.STRATEGY_AFTER_IMAGES,
         reply_markup=deposit_keyboard()
     )
 
@@ -438,14 +438,12 @@ async def channel_choice(
 
 
         await message.answer(
-            f"{texts.CHANNEL_FAMILY}\n\n"
-            f"{texts.CHANNEL_FAMILY_LINK}\n\n"
-            f"Робот:\n{texts.ROBOT_LINK}"
+            texts.CHANNEL_FAMILY_TEXT
         )
 
 
         await message.answer(
-            texts.FAMILY_WARNING
+            texts.RULES_WARNING
         )
 
 
@@ -477,8 +475,7 @@ async def channel_choice(
 
 
             await message.answer(
-                f"{texts.CHANNEL_OTC}\n\n"
-                f"{texts.CHANNEL_OTC_LINK}"
+                texts.CHANNEL_OTC_TEXT
             )
 
 
@@ -682,3 +679,4 @@ async def start_bot_polling():
     await dp.start_polling(
         bot
     )
+
