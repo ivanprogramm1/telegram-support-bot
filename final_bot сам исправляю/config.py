@@ -24,6 +24,11 @@ DB_PATH = os.getenv(
     "traders.db"
 )
 
+DATABASE_URL = os.getenv(
+    "DATABASE_URL",
+    "postgresql://user:password@localhost/traders"
+)
+
 
 # ==========================
 # POSTBACK
