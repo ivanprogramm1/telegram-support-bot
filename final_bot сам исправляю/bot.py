@@ -89,12 +89,13 @@ def explain_keyboard():
             ],
             [
                 KeyboardButton(
-                    text=texts.BTN_PERSONAL
+                    text=texts.BTN_SUPPORT
                 )
             ],
         ],
         resize_keyboard=True,
     )
+
 
 
 def deposit_keyboard():
@@ -273,7 +274,7 @@ async def verification_done(
 
 
     await message.answer(
-        texts.AFTER_VERIFICATION_TEXT,
+        texts.LAST_STEP_TEXT,
         reply_markup=explain_keyboard()
     )
 

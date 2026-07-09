@@ -216,13 +216,13 @@ BTN_SUPPORT = (
     "Связаться с поддержкой"
 )
 
-BTN_FAQ = (
-    "Технический FAQ"
-)
+# BTN_FAQ = (
+#     "Технический FAQ"
+# )
 
-BTN_RISKS = (
-    "Про риски"
-)
+# BTN_RISKS = (
+#     "Про риски"
+# )
 
 
 FAQ_REDIRECT = (
