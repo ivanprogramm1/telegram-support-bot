@@ -1,4 +1,5 @@
 import asyncio
+import logging
 
 from aiogram import Bot, Dispatcher, F
 from aiogram.filters import Command, CommandStart
@@ -34,6 +35,9 @@ from db import (
     get_inactive_traders,
 )
 
+# Логирование
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
 
 bot = Bot(token=BOT_TOKEN)
 
@@ -194,9 +198,12 @@ async def get_uid(
 ):
 
     uid = message.text.strip()
+    
+    logger.info(f"🔍 Ищу трейдера с UID: {uid}")
 
     trader = await get_trader(uid)
-
+    
+    logger.info(f"📊 Результат поиска: {trader}")
 
     if trader:
 
@@ -209,6 +216,7 @@ async def get_uid(
             uid=uid
         )
 
+        logger.info(f"✅ Трейдер найден: {uid}")
 
         await message.answer(
             texts.UID_FOUND_VERIFICATION
@@ -239,6 +247,8 @@ async def get_uid(
 
     else:
 
+        logger.warning(f"❌ Трейдер не найден: {uid}")
+        
         await message.answer(
             texts.UID_NOT_FOUND
         )
